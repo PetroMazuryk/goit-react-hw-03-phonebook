@@ -38,7 +38,9 @@ export class PhonebookForm extends Component {
 
     const alreadyExists = contacts.findIndex(item => {
       const name = item.name.toLowerCase();
+
       const newName = contact.name.toLowerCase();
+
       return name === newName;
     });
 
