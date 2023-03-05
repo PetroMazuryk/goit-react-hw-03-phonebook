@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import initialContacts from '../initialContacts.json';
-
+import { nanoid } from 'nanoid';
 import { Section } from 'components/Section/Section';
 import { PhonebookForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
@@ -37,7 +37,7 @@ export class App extends Component {
   // };
 
   addContact = ({ name, number }) => {
-    const contact = { name, number };
+    const contact = { id: nanoid(), name, number };
 
     this.setState(prevState => ({
       contacts: [...prevState.contacts, contact],
